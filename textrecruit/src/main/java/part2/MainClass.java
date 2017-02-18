@@ -48,9 +48,6 @@ public class MainClass {
 			ExecutorService executor =  Executors.newFixedThreadPool(4);
 			while (!uids.isEmpty()) {
 				executor.submit(new ChecksumCalculator(uids));
-				executor.submit(new ChecksumCalculator(uids));
-				executor.submit(new ChecksumCalculator(uids));
-				executor.submit(new ChecksumCalculator(uids));
 			}
 			executor.shutdown();
 		} catch (IOException e) {

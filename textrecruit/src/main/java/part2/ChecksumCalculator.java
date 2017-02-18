@@ -21,6 +21,7 @@ public class ChecksumCalculator extends Thread {
 
 	@Override
 	public void run() {
+		if (uids.isEmpty()) { return; }
 		String uid = uids.poll();
 		md.update(uid.getBytes());
 		byte byteData[] = md.digest();
